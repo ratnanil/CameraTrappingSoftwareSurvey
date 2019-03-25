@@ -1,0 +1,12 @@
+name: survey_camera_trapping
+title: Survey_Camera_Trapping
+username: rata
+account: rata
+server: rstudio-pubs.zhaw.ch
+hostUrl: https://rstudio-pubs.zhaw.ch/__api__
+appId: 18
+bundleId: 57
+url: https://rstudio-pubs.zhaw.ch/content/18/
+when: 1553506771.77565
+asMultiple: FALSE
+asStatic: FALSE

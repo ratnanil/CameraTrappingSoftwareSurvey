@@ -1,0 +1,122 @@
+---
+title: "R Notebook"
+output: github_document
+
+---
+
+```{r,warning=F,message=F, echo = FALSE}
+library(tidyverse)
+library(googledrive)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+
+googledrive::drive_download(as_id("https://docs.google.com/spreadsheets/d/1DTioHEcN88Iy7H4mKSnW81VfcwlKZBDZXQGSnJkWgKk/edit?usp=sharing"),type = "csv",path = "responses", overwrite = T)
+
+responses <- read_csv("responses.csv")
+
+responses_tidy <- responses %>%
+  gather(question,answer,-1) %>%
+  mutate(
+    question = str_replace(question,"sofware","software"),
+    answer = str_remove(answer," / no dedicated software")
+    ) %>%
+  mutate(
+    question_cat = case_when(
+      grepl("other software",question)~"Software text",
+      grepl("different environment",question)~"Environment text",
+      grepl("What environment",question)~"Environment factor",
+      grepl("What software",question)~"Software factor"
+    )
+  ) %>%
+  separate(question_cat,c("category","type")," ")
+
+```
+
+## Question Nr 1
+
+> What software do you use to mange your camera trapping images?
+
+```{r}
+responses_tidy %>%
+  filter(type == "factor") %>%
+  filter(category == "Software") %>%
+  separate_rows(answer, sep = ", ") %>% 
+  group_by(question,answer) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(
+    answer = fct_reorder(answer,n),
+    answer = fct_relevel(answer,"other",after = 0L)
+  ) %>%
+  ggplot(aes(answer,n)) + 
+  geom_col() +
+  labs(y = "Number of responses") +
+  theme_classic() +
+  theme(axis.title.y = element_blank()) + 
+  coord_flip() 
+
+
+```
+
+## Question Nr 2
+
+> If you use other software, please comment:
+
+```{r,results='asis'}
+responses_tidy %>%
+  filter(!is.na(answer)) %>%
+  filter(type == "text") %>%
+  filter(category == "Software") %>%
+  pull(answer) %>%
+  pander::pandoc.list()
+
+```
+
+(the above is a list of all non-empty responses)
+
+## Question Nr 3
+
+
+> What environment do you work in?
+
+```{r}
+responses_tidy %>%
+  filter(type == "factor") %>%
+  filter(category == "Environment") %>%
+  separate_rows(answer, sep = ", ") %>% 
+  group_by(question,answer) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(
+    answer = fct_reorder(answer,n)
+  ) %>%
+  ggplot(aes(answer,n)) + 
+  geom_col() +
+  labs(y = "Number of responses") +
+  theme(axis.title.y = element_blank()) +
+  coord_flip() +
+  theme_classic()
+```
+
+
+## Question Nr 4
+
+> If you work in a different environment, please specify:
+
+
+```{r}
+all_na <- responses_tidy %>%
+  filter(type == "text") %>%
+  filter(category == "Environment") %>%
+  pull(answer) %>%
+  is.na() %>%
+  `!` %>%
+  any()
+
+
+```
+
+`r ifelse(!all_na,"(No responses)","Some responses, redo analysis")`
+
