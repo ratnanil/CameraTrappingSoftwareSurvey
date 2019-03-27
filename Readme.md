@@ -30,6 +30,8 @@ day](Readme_files/figure-gfm/unnamed-chunk-3-1.png)
 
 > If you use other software, please comment:
 
+(below is a list of all non-empty responses)
+
   - Digikam for image tagging
   - Trapper (open source, published and developed by Jakub Bubnicki)
   - Timelapse
@@ -37,8 +39,6 @@ day](Readme_files/figure-gfm/unnamed-chunk-3-1.png)
   - Home made database KORAPhoto
 
 <!-- end of list -->
-
-(the above is a list of all non-empty responses)
 
 ## Question No 3
 
