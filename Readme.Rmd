@@ -64,6 +64,8 @@ responses %>%
 
 > What software do you use to mange your camera trapping images?
 
+(multiple answers possible)
+
 ```{r}
 responses_tidy %>%
   filter(type == "factor") %>%

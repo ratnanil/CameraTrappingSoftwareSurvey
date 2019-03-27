@@ -7,7 +7,7 @@ Trapping Images* posted on
 [wildlabs.net](https://www.wildlabs.net/community/thread/688) on
 21.03.2019 and shared via
 [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20)
-subsequently. We received 19 to date (2019-03-25). The survey consisted
+subsequently. We received 27 to date (2019-03-27). The survey consisted
 of four questions:
 
 1.  What software do you use to mange your camera trapping images?
@@ -21,6 +21,8 @@ day](Readme_files/figure-gfm/unnamed-chunk-3-1.png)
 ## Question No 1
 
 > What software do you use to mange your camera trapping images?
+
+(multiple answers possible)
 
 ![](Readme_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
