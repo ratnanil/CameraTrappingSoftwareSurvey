@@ -1,11 +1,11 @@
 Software to manage Camera Trapping Images
 ================
 
-Here are the Results from [the
+Here are the results from [the
 survey](https://forms.gle/uafXkWzh8FinCsv86) *Software to manage Camera
 Trapping Images* posted on
 [wildlabs.net](https://www.wildlabs.net/community/thread/688) on
-21.03.2019 and shared via
+2019-03-21 and shared via
 [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20)
 subsequently. We received 27 to date (2019-03-27). The survey consisted
 of four questions:
