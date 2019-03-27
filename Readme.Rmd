@@ -126,7 +126,6 @@ responses_tidy %>%
   ) %>%
   ggplot(aes(answer,n)) + 
   geom_col() +
-  scale_y_continuous(breaks = 0:15) +
   labs(y = "Number of responses") +
   theme(axis.title.y = element_blank()) +
   coord_flip()
