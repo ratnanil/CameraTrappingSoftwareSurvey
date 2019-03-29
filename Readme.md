@@ -7,7 +7,7 @@ Trapping Images* posted on
 [wildlabs.net](https://www.wildlabs.net/community/thread/688) on
 2019-03-21 and shared via
 [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20)
-subsequently. We received 27 to date (2019-03-27). The survey consisted
+subsequently. We received 29 to date (2019-03-29). The survey consisted
 of four questions:
 
 1.  What software do you use to mange your camera trapping images?
