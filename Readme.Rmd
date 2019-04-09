@@ -39,7 +39,10 @@ responses_tidy <- responses %>%
 ```
 
 
-Here are the results from [the survey](https://forms.gle/uafXkWzh8FinCsv86) *Software to manage Camera Trapping Images* posted on [wildlabs.net](https://www.wildlabs.net/community/thread/688) on 2019-03-21 and shared via [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20) subsequently. We received `r nrow(responses)` to date (`r Sys.Date()`). The survey consisted of four questions:
+Here are the results from [the survey](https://forms.gle/uafXkWzh8FinCsv86) *Software to manage Camera Trapping Images* posted on [wildlabs.net](https://www.wildlabs.net/community/thread/688) on 2019-03-21 and shared via [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20) subsequently. We received `r nrow(responses)` to date (`r Sys.Date()`). Feel free to download/pull this repo to redo the analysis with the newest responses (the RMarkdown File `Readme.Rmd` pulls the data directly from the googledoc).
+
+
+The survey consisted of four questions:
 
 1. What software do you use to mange your camera trapping images?
 1. If you use other software, please comment
@@ -137,18 +140,19 @@ responses_tidy %>%
 
 > If you work in a different environment, please specify:
 
+(below is a list of all non-empty responses)
 
-```{r}
-all_na <- responses_tidy %>%
+
+```{r, results="asis"}
+responses_tidy %>%
+  filter(!is.na(answer)) %>%
   filter(type == "text") %>%
   filter(category == "Environment") %>%
   pull(answer) %>%
-  is.na() %>%
-  `!` %>%
-  any()
+  pander::pandoc.list()
+
 
 
 ```
 
-`r ifelse(!all_na,"(No responses)","Some responses, redo analysis")`
 
