@@ -7,10 +7,10 @@ Trapping Images* posted on
 [wildlabs.net](https://www.wildlabs.net/community/thread/688) on
 2019-03-21 and shared via
 [Twitter](https://twitter.com/WILDLABSNET/status/1108676937868812288?s=20)
-subsequently. We received 31 to date (2019-04-09). Feel free to
-download/pull this repo to redo the analysis with the newest responses
-(the RMarkdown File `Readme.Rmd` pulls the data directly from the
-googledoc).
+subsequently. We received 31 responses to date (2019-04-26). Feel free
+to download/pull this repo to redo the analysis with the newest
+responses (the RMarkdown File `Readme.Rmd` pulls the data directly from
+the googledoc).
 
 The survey consisted of four questions:
 
